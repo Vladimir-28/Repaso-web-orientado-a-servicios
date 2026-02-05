@@ -4,6 +4,23 @@ import { use, useState } from 'react'
 function App() {
 	const [flag, setFlag] = useState(false);
 	const [list, setLIst] = useState(['Ana', 'Luisa', 'Pepe', 'Juan', 'Roberto']);
+	const [users, setUsers] = useState([
+		{
+			id: 1,
+			name: 'Luisa',
+			status: false
+		},
+		{
+			id: 2,
+			name: 'Roberto',
+			status: true
+		},
+		{
+			id: 3,
+			name: 'Coker',
+			status: true
+		}
+	]);
 
 	const handleValue = () => {
 		setFlag(!flag);
@@ -32,9 +49,26 @@ function App() {
 						</div>
 					</div>
 				))}
-
 			</div>
 
+			<h3 className="mt-4">Estructuras mezcladas</h3>
+			<hr />
+			<div className="row g-3">
+				{users.map((user) => (
+					<div key={user.id} className="col-3 mb-4">
+						<div className="card border-0 shadow">
+							<div className="card-body">
+								<h4>{user.name}</h4>
+								{user.status ? (
+									<span className="badge bg-success">Activo</span>
+								) : (
+									<span className="badge bg-danger">Inactivo</span>
+								)}
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
 		</main>
 	)
 }
