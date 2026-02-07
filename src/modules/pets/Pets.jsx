@@ -16,7 +16,7 @@ function Pets(){
                                 <span className="fw-bold">Edad:</span>
                                 <span>Edad mascota</span>
                             </p>
-                            <div className="w-100 bg-secondary" style={(heigth: 250)}>
+                            <div className="w-100 bg-secondary" style={{height: 250}}>
                                 <img src="" alt="" />
                             </div>
                         </div>
